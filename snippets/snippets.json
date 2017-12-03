@@ -99,6 +99,6 @@
                 "\t'source': 'speed-cam-src',",
             "});"
         ],
-        "description":"Adds the Mapbox Script"
+        "description":"Adds layer to map object."
     }
 }
