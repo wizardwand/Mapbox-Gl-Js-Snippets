@@ -89,5 +89,16 @@
             "<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.42.2/mapbox-gl.css' rel='stylesheet' />"
         ],
         "description":"Adds the Mapbox Script"
+    },
+    "Add layer to Mapbox":{
+        "prefix" : "mb-add-layer",
+        "body":[
+            "map.addLayer({",
+                "\t'id': 'speed-cam-unclustered-point',",
+                "\t'type': 'symbol',",
+                "\t'source': 'speed-cam-src',",
+            "});"
+        ],
+        "description":"Adds the Mapbox Script"
     }
 }
