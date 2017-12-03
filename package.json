@@ -1,0 +1,21 @@
+{
+    "name": "mapbox-gl-js-snippets",
+    "displayName": "Mapbox-Gl-JS Snippets",
+    "description": "Snippets for Mapbox Gl JS , mapbox-gl-js",
+    "version": "0.0.1",
+    "publisher": "shirishpatil",
+    "engines": {
+        "vscode": "^1.18.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "javascript",
+                "path": "./snippets/snippets.json"
+            }
+        ]
+    }
+}

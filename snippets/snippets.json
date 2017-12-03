@@ -1,0 +1,93 @@
+{
+    "New Map Options":{
+        "prefix":"mb-new-map",
+        "body":[
+            "// https://www.mapbox.com/mapbox-gl-js/api/#map",
+            "var map = new mapboxgl.Map({",
+            "\tcontainer:'$1',", 
+            "\tminZoom:'$2',",
+            "\tmaxZoom:'$3',",
+            "\tstyle:'$4',", 
+            "\thash:'$5',", 
+            "\tinteractive:'$6',",
+            "\tbearingSnap:'$7',",
+            "\tpitchWithRotate:'$8',",
+            "\tattributionControl:'$9',",
+            "\tlogoPosition:'$10',", 
+            "\tfailIfMajorPerformanceCaveat:'$11',", 
+            "\tpreserveDrawingBuffer:'$12',",
+            "\trefreshExpiredTiles:'$13',",
+            "\tmaxBounds:'$14',",
+            "\tscrollZoom:'$15',",
+            "\tboxZoom:'$16',",
+            "\tdragRotate:'$17',",
+            "\tdragPan:'$18',",
+            "\tkeyboard:'$19',",
+            "\tdoubleClickZoom:'$20',",
+            "\ttouchZoomRotate:'$21',",
+            "\ttrakeResize:'$22',",
+            "\tcenter:[$23,$24],",
+            "\tbearing:'$25',",
+            "\tzoom:'$26',",
+            "\tpitch:'$27',",
+            "\trenderWorldCopies:'$28',",
+            "\tmaxTileCacheSize:'$29',",
+            "\tlocalIdeographFontFamily:'$30',",
+            "\ttransformRequest:'$31'",
+            "});"
+        ],
+        "description":"create mapbox object"
+    },
+    "Create Mapbox Object ": {
+        "prefix": "mb-basic-map",
+        "body": [
+            "mapboxgl.accessToken = '$1',",
+            "\tvar map = new mapboxgl.Map({",
+            "\tcontainer: '$2',",
+            "\tstyle: 'mapbox://styles/mapbox/light-v9',",
+            "\tzoom: 13,",
+            "\tcenter: [-122.447303, 37.753574]",
+            "});"
+        ],
+        "description": "Simple basic Mapbox object"
+    },
+    "Add Mapbox source": {
+        "prefix": "mb-add-source",
+        "body": [
+            "map.addSource('$1-src', {",
+            "\ttype: 'geojson',",
+            "\tdata: $2,",
+            "\tcluster: true,",
+            "\tclusterMaxZoom: 15,",
+            "\tclusterRadius: 30",
+            "});"
+        ],
+        "description": "Add source to mapbox "
+    },
+    "Add Mapbox Geojson Data": {
+        "prefix": "mb-geojson-Data",
+        "body": [
+            "$1"
+        ],
+        "description": "Add Data to mapbox Source"
+    },
+    "Mapbox click Event": {
+        "prefix": "mb-on-map-click",
+        "body": [
+            "map.on('click', '$1', function (ob) {",
+                "\tif (ob && ob.features && ob.features.length > 0) {",
+                   "\t alert('$2');",
+                "\t}",
+            "});"
+        ],
+        "description": "Add Data to mapbox Source"
+    },
+    "Add Mapbox Script":{
+        "prefix" : "mb-script",
+        "body":[
+            "<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.42.2/mapbox-gl.js'></script>",
+            "<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.42.2/mapbox-gl.css' rel='stylesheet' />"
+        ],
+        "description":"Adds the Mapbox Script"
+    }
+}
