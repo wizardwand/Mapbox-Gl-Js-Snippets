@@ -4,7 +4,7 @@
 
 This extension for Visual Studio Code adds snippets for mapbox-gl.js for TypeScript and JavaScript.
 
-
+![Use Extension](images/mapbox-snippet.gif)
 
 See the [CHANGELOG](CHANGELOG.md) for the latest changes
 
@@ -32,3 +32,5 @@ Alternatively, press `Ctrl`+`Space` (Windows, Linux) or `Cmd`+`Space` (OSX) to a
 1. Select `Install Extension`
 1. Choose the extension
 1. Reload Visual Studio Code
+
+![Use Extension](images/mapbox-snippet.gif)
