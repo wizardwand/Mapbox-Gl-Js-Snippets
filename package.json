@@ -2,8 +2,9 @@
     "name": "mapbox-gl-js-snippets",
     "displayName": "Mapbox-Gl-JS Snippets",
     "description": "Snippets for Mapbox Gl JS , mapbox-gl-js",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "publisher": "shirishpatil",
+    "icon": "images/mapbox.png",
     "repository": {
         "type": "git",
         "url": "https://github.com/wizardwand/Mapbox-Gl-Js-Snippets"

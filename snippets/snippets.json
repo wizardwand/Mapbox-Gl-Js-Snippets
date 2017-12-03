@@ -94,9 +94,9 @@
         "prefix" : "mb-add-layer",
         "body":[
             "map.addLayer({",
-                "\t'id': 'speed-cam-unclustered-point',",
+                "\t'id': '$1-layer',",
                 "\t'type': 'symbol',",
-                "\t'source': 'speed-cam-src',",
+                "\t'source': '$2-src',",
             "});"
         ],
         "description":"Adds layer to map object."
