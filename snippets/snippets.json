@@ -4,7 +4,7 @@
         "body":[
             "// https://www.mapbox.com/mapbox-gl-js/api/#map",
             "var map = new mapboxgl.Map({",
-            "\tcontainer:'$1',", 
+            "\tcontainer:'$1',The HTML element in which Mapbox GL JS will render the map, or the element's string  id . The specified element must have no children.", 
             "\tminZoom:'$2',",
             "\tmaxZoom:'$3',",
             "\tstyle:'$4',", 
