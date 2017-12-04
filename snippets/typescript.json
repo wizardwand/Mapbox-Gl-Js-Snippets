@@ -1,0 +1,96 @@
+{
+    "New Map Options":{
+        "prefix":"mb-new-map",
+        "body":[
+            "// https://www.mapbox.com/mapbox-gl-js/api/#map",
+            "var map = new mapboxgl.Map({",
+            "\tcontainer:'$1',//The HTML element in which Mapbox GL JS will render the map, or the element's string  id . The specified element must have no children.", 
+            "\tminZoom:'$2',//The minimum zoom level of the map (0-24).",
+            "\tmaxZoom:'$3',//The maximum zoom level of the map (0-24).",
+            "\tstyle:'$4',//mapbox://styles/mapbox/satellite-streets-v9", 
+            "\thash:'$5',//If  true , the map's position (zoom, center latitude, center longitude, bearing, and pitch) will be synced with the hash fragment of the page's URL. For example, http://path/to/my/page.html#2.59/39.26/53.07/-24.1/60 .", 
+            "\tinteractive:'$6',//If  false , no mouse, touch, or keyboard listeners will be attached to the map, so it will not respond to interaction.",
+            "\tbearingSnap:'$7',The threshold, measured in degrees, that determines when the map's bearing (rotation) will snap to north. For example, with a bearingSnap of 7, if the user rotates the map within 7 degrees of north, the map will automatically snap to exact north.",
+            "\tpitchWithRotate:'$8',//If  false , the map's pitch (tilt) control with 'drag to rotate' interaction will be disabled.",
+            "\tattributionControl:'$9',//If  true , an AttributionControl will be added to the map.",
+            "\tlogoPosition:'$10',//A string representing the position of the Mapbox wordmark on the map. Valid options are  top-left , top-right ,  bottom-left ,  bottom-right .", 
+            "\tfailIfMajorPerformanceCaveat:'$11',//If  true , map creation will fail if the performance of Mapbox GL JS would be dramatically worse than expected (i.e. a software renderer would be used).", 
+            "\tpreserveDrawingBuffer:'$12',//If  true , the map's canvas can be exported to a PNG using  map.getCanvas().toDataURL() . This is  false by default as a performance optimization.",
+            "\trefreshExpiredTiles:'$13',//If  false , the map won't attempt to re-request tiles once they expire per their HTTP cacheControl / expires headers.",
+            "\tmaxBounds:'$14',//If set, the map will be constrained to the given bounds.",
+            "\tscrollZoom:'$15',//If  true , the *scroll to zoom* interaction is enabled. An  Object value is passed as options to ScrollZoomHandler#enable .",
+            "\tboxZoom:'$16',//f  true , the *box zoom* interaction is enabled (see BoxZoomHandler ).",
+            "\tdragRotate:'$17',//If  true , the *drag to rotate* interaction is enabled (see DragRotateHandler ).",
+            "\tdragPan:'$18',//If  true , the *drag to pan* interaction is enabled (see DragPanHandler ).",
+            "\tkeyboard:'$19',//If  true , keyboard shortcuts are enabled (see KeyboardHandler ).",
+            "\tdoubleClickZoom:'$20',//If  true , the *double click to zoom* interaction is enabled (see DoubleClickZoomHandler ).",
+            "\ttouchZoomRotate:'$21',//If  true , the *pinch to rotate and zoom* interaction is enabled. An  Object value is passed as options to TouchZoomRotateHandler#enable .",
+            "\ttrakeResize:'$22',//If  true , the map will automatically resize when the browser window resizes.",
+            "\tcenter:[$23,$24],//The inital geographical centerpoint of the map. If center is not specified in the constructor options, Mapbox GL JS will look for it in the map's style object. If it is not specified in the style, either, it will default to  [0, 0] Note: Mapbox GL uses longitude, latitude coordinate order (as opposed to latitude, longitude) to match GeoJSON.",
+            "\tbearing:'$25',//The initial bearing (rotation) of the map, measured in degrees counter-clockwise from north. If  bearing is not specified in the constructor options, Mapbox GL JS will look for it in the map's style object. If it is not specified in the style, either, it will default to  0 .",
+            "\tzoom:'$26',//The initial zoom level of the map. If  zoom is not specified in the constructor options, Mapbox GL JS will look for it in the map's style object. If it is not specified in the style, either, it will default to 0 .",
+            "\tpitch:'$27',//The initial pitch (tilt) of the map, measured in degrees away from the plane of the screen (0-60). If  pitch is not specified in the constructor options, Mapbox GL JS will look for it in the map's style object. If it is not specified in the style, either, it will default to  0 .",
+            "\trenderWorldCopies:'$28',//If  true , multiple copies of the world will be rendered, when zoomed out.",
+            "\tmaxTileCacheSize:'$29',//The maxiumum number of tiles stored in the tile cache for a given source. If omitted, the cache will be dynamically sized based on the current viewport.",
+            "\tlocalIdeographFontFamily:'$30',//If specified, defines a CSS font-family for locally overriding generation of glyphs in the 'CJK Unified Ideographs' and 'Hangul Syllables' ranges. In these ranges, font settings from the map's style will be ignored, except for font-weight keywords (light/regular/medium/bold). The purpose of this option is to avoid bandwidth-intensive glyph server requests. (see Use locally generated ideographs )",
+            "\ttransformRequest:'$31'//A callback run before the Map makes a request for an external URL. The callback can be used to modify the url, set headers, or set the credentials property for cross-origin requests. Expected to return an object with a  url property and optionally  headers and  credentials properties.",
+            "});"
+        ],
+        "description":"create mapbox object"
+    },
+    "Create Mapbox Object ": {
+        "prefix": "mb-basic-map",
+        "body": [
+            "mapboxgl.accessToken = '$1',",
+            "\tvar map = new mapboxgl.Map({",
+            "\tcontainer: '$2',",
+            "\tstyle: 'mapbox://styles/mapbox/light-v9',",
+            "\tzoom: 13,",
+            "\tcenter: [-122.447303, 37.753574]",
+            "});"
+        ],
+        "description": "Simple basic Mapbox object"
+    },
+    "Add Mapbox source": {
+        "prefix": "mb-add-source",
+        "body": [
+            "map.addSource('$1-src', {",
+            "\ttype: 'geojson',",
+            "\tdata: $2,",
+            "\tcluster: true,",
+            "\tclusterMaxZoom: 15,",
+            "\tclusterRadius: 30",
+            "});"
+        ],
+        "description": "Add source to mapbox "
+    },
+    "Add Mapbox Geojson Data": {
+        "prefix": "mb-geojson-Data",
+        "body": [
+            "$1"
+        ],
+        "description": "Add Data to mapbox Source"
+    },
+    "Mapbox click Event": {
+        "prefix": "mb-on-map-click",
+        "body": [
+            "map.on('click', '$1', function (ob) {",
+                "\tif (ob && ob.features && ob.features.length > 0) {",
+                   "\t alert('$2');",
+                "\t}",
+            "});"
+        ],
+        "description": "Add Data to mapbox Source"
+    },
+    "Add layer to Mapbox":{
+        "prefix" : "mb-add-layer",
+        "body":[
+            "map.addLayer({",
+                "\t'id': '$1-layer',",
+                "\t'type': 'symbol',",
+                "\t'source': '$2-src',",
+            "});"
+        ],
+        "description":"Adds layer to map object."
+    }
+}

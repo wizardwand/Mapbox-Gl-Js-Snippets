@@ -16,10 +16,23 @@
         "Snippets"
     ],
     "contributes": {
+        "jsonValidation": [
+            {
+                "fileMatch": "manifest.json",
+                "url": "http://json.schemastore.org/web-manifest"
+            }
+        ],
         "snippets": [
             {
                 "language": "javascript",
-                "path": "./snippets/snippets.json"
+                "path": "./snippets/javascript.json"
+            },{
+                "language": "typescript",
+                "path": "./snippets/javascript.json"
+            },
+            {
+                "language": "html",
+                "path": "./snippets/html.json"
             }
         ]
     }
