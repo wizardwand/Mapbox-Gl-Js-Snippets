@@ -103,13 +103,60 @@
         "description": "Add Data to mapbox Source"
     },
     "Mapbox load Image": {
-        "prefix": "mb-load-image-from-url",
+        "prefix": "mb-load-img-from-url",
         "body": [
-            "map.loadImage('{$1:url}', function(error, image) {",
+            "map.loadImage('${1:url}', function(error, image) {",
             "\tif (error) throw error;",
-            "\tmap.addImage('{$2:imageName}', image);",
+            "\tmap.addImage('${2:imageName}', image);",
             "});"
         ],
         "description": "Load Image from url"
+    },
+    "Mapbox remove layer": {
+        "prefix": "mb-remove-layer",
+        "body": [
+            "map.removeLayer(${1:layerId);"
+        ],
+        "description": "Remove Layer"
+    },
+    "Mapbox remove Source": {
+        "prefix": "mb-remove-source",
+        "body": [
+            "map.removeSource(${1:srcId);"
+        ],
+        "description": "Remove SourceLayer"
+    },
+    "Mapbox remove Image": {
+        "prefix": "mb-remove-image",
+        "body": [
+            "map.removeImage(${1:imageId);"
+        ],
+        "description": "Remove Image from Map"
+    },
+    "Mapbox Check if source is loaded": {
+        "prefix": "mb-source-loaded",
+        "body": [
+            "map.isSourceLoaded(${1:sourceId);"
+        ],
+        "description": "Mapbox Check if source is loaded"
+    },
+    "Mapbox get source Object": {
+        "prefix": "mb-get-source",
+        "body": [
+            "map.getSource(${1:sourceId);"
+        ],
+        "description": "Mapbox get source Object from map"
+    },
+    "Mapbox add listners":{
+        "prefix":"mb-add-event-listners",
+        "body":[
+            "// typeOfEvents - 'mousedown' , 'mouseup' ,  'click' ,",
+            "//'dblclick' ,  'mousemove' ,  'mouseenter' , 'mouseleave' ",
+            "//'mouseover' ,  'mouseout' ,  'contextmenu' , 'touchstart' ",
+            "//'touchend' , or  'touchcancel' .  mouseenter and mouseover ",
+            "map.on('${1:typeOfEvent}', '${2:layerId}', function (ob) {",
+            "\tconsole.log(${1:typeOfEvent}+' happened on '+ ${2:layerId});",
+            "});"  
+        ]
     }
 }
