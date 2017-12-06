@@ -115,35 +115,35 @@
     "Mapbox remove layer": {
         "prefix": "mb-remove-layer",
         "body": [
-            "map.removeLayer(${1:layerId);"
+            "map.removeLayer('${1:layerId}');"
         ],
         "description": "Remove Layer"
     },
     "Mapbox remove Source": {
         "prefix": "mb-remove-source",
         "body": [
-            "map.removeSource(${1:srcId);"
+            "map.removeSource('${1:srcId}');"
         ],
         "description": "Remove SourceLayer"
     },
     "Mapbox remove Image": {
         "prefix": "mb-remove-image",
         "body": [
-            "map.removeImage(${1:imageId);"
+            "map.removeImage('${1:imageId}');"
         ],
         "description": "Remove Image from Map"
     },
     "Mapbox Check if source is loaded": {
         "prefix": "mb-source-loaded",
         "body": [
-            "map.isSourceLoaded(${1:sourceId);"
+            "map.isSourceLoaded('${1:sourceId}');"
         ],
         "description": "Mapbox Check if source is loaded"
     },
     "Mapbox get source Object": {
         "prefix": "mb-get-source",
         "body": [
-            "map.getSource(${1:sourceId);"
+            "map.getSource('${1:sourceId}');"
         ],
         "description": "Mapbox get source Object from map"
     },
