@@ -86,7 +86,7 @@
             "map.addLayer({",
             "\t'id': '$1-layer',",
             "\t'type': 'symbol',",
-            "\t'source': '$2-src',",
+            "\t'source': '$2-src'",
             "});"
         ],
         "description": "Adds layer to map object."
@@ -101,5 +101,15 @@
             "});"
         ],
         "description": "Add Data to mapbox Source"
+    },
+    "Mapbox load Image": {
+        "prefix": "mb-load-image-from-url",
+        "body": [
+            "map.loadImage('{$1:url}', function(error, image) {",
+            "\tif (error) throw error;",
+            "\tmap.addImage('{$2:imageName}', image);",
+            "});"
+        ],
+        "description": "Load Image from url"
     }
 }
